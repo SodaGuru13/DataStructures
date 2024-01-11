@@ -1,0 +1,71 @@
+#include "maxheap20.h"
+
+// default constructor
+heap::heap()
+{
+	SZ = 0;
+	arr = new int;
+}
+
+//n is the size of the heap array
+heap::heap( int n )
+{
+	SZ = 0;
+	last = n;
+	arr = new int[n];
+}
+
+// print the array  ( use <= last if you go that route )
+void heap::printA()
+{
+	int i;
+	for (i = 0; i < last; ++i)
+		cout << setw(4) << arr[i] ;
+	cout << endl;
+}
+
+// start at item last, move it up until 
+//   heap property is restored 
+void heap::upheap()
+{
+}
+
+
+// start at item 1, move it down until 
+//   heap property is restored 
+// ** swap with larger child & repeat
+void heap::downheap()
+{
+}
+
+void heap::add(int x)
+{
+	int i, tmp;
+	if (SZ == last)
+	{
+		cout << endl << "Overflow:" << endl;
+		return;
+	}
+	SZ++;
+	i = SZ -1;
+	arr[i] = x;
+	while (i != 0 && arr[(i-1)/2] < arr[i])
+	{
+		tmp = arr[(i-1)/2];
+		arr[(i-1)/2] = arr[i];
+		arr[i] = tmp;
+		i = (i-1)/2;
+	}
+}
+
+int heap::remove()
+{
+}
+
+bool heap::isEmpty()
+{
+}
+
+bool heap::isFull()
+{
+}

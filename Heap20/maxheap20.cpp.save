@@ -1,0 +1,38 @@
+#include "maxheap20.h"
+
+// default constructor
+heap::heap()
+{
+	arr = NULL;
+}
+
+//n is the size of the heap array
+heap::heap( int n )
+{
+	arr = malloc(sizeof(int)*n);
+}
+
+
+// print the array  ( use <= last if you go that route )
+void heap::printA()
+{
+	int i;
+	for (i = 1; i < last; ++i)
+		cout << setw(4) << arr[i] ;
+	cout << endl;
+}
+
+// start at item last, move it up until
+//   heap property is restored
+void heap::upheap()
+{
+}
+
+
+// start at item 1, move it down until
+//   heap property is restored
+// ** swap with larger child & repeat
+void heap::downheap()
+{
+}
+
